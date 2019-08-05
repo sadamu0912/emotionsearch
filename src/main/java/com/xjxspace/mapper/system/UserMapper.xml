@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xjxspace.mapper.system.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.xjxspace.model.system.User" >
+      <id column="id" property="id" />
+     <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+      <result column="user_account" property="userAccount" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
+     <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+      <result column="email" property="email" jdbcType="VARCHAR" />
+      <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+      <result column="third_party_account" property="thirdPartyAccount" jdbcType="VARCHAR" />
+                <result column="create_time" property="createTime"/>
+                <result column="last_login_time" property="lastLoginTime"/>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    user_id, user_name, user_account,password,enable,avatar,email,phone_number,third_party_account,create_time,last_login_time
+  </sql>
+ 	<select id="getAllUser" resultMap="BaseResultMap">
+ 		select
+ 		<include refid="Base_Column_List"/>
+ 		from user
+ 	</select>
+ 	
+ 	<select id="getUserByUserAccount" resultMap="BaseResultMap" parameterType="java.lang.String" >
+ 		select
+ 		<include refid="Base_Column_List"/>
+ 		from user where 1=1 
+ 		<if test="userAccount !=null">
+ 		 and user_account=#{userAccount}
+ 		</if>
+ 	</select>
+</mapper>

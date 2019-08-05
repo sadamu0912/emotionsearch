@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeteaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>小程序后台管理系统</title>
+     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <link rel="stylesheet" th:href="@{/component/bootstrap/css/bootstrap.min.css}" />
+     <link rel="stylesheet" th:href="@{/component/magicCheck/magic-check.css}" />
+      <link rel="stylesheet" th:href="@{/component/layer/theme/default/layer.css}" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/skins/allskins.css}" />
+     <link rel="stylesheet" th:href="@{/css/project/list.css}" />
+     <link rel="stylesheet" th:href="@{/css/frame/frame.css}" />	
+     <link rel="stylesheet" th:href="@{/css/project/pageList.css}" />
+</head>
+<body>
+	<div class="main">
+	<!-- 查询头部 -->
+		<div id="queryHead" class="container">
+			<div class="row" style="margin-top:10px;">
+				<div class="form-inline">
+						<div class="form-group">
+						<label  for="createTime">创建时间:</label>
+						<input type="text" class="form-control date" id="sartTime" name="startTime"/>
+						~<input type="text" class="form-control date" id="endTime" name="endTime"/>
+						</div>
+						 <div class="form-group" style="width:30%;">
+              				  <input type="text" class="form-control" placeholder="请输入项目名称" id="searchProjectBtn" style="width:70%;"/>
+          				  	<button class="navSearchBtn" style="width: 100px; height: 33px; top: 0px;">搜索</button>
+          				  </div>
+          				  <div class="form-group">
+          				  	<button type="button" class="btn btn-success" style="height: 34px;margin-top:4px;">新增项目</button>
+          				  </div>
+          				 <div class="form-group">
+          				  	<button type="button" class="btn btn-warning" style="height: 34px;margin-top:4px;">批量操作</button>
+          				  </div>
+						
+					</div>
+			</div>
+		</div>
+		<!-- 项目表格 -->
+		<div class="main-content">
+			<table  id="projectTable" class="table table-hover" th:fragment="resultList" 
+ 			th:attr="data-page-total=${pageInfo.total},data-page-current=${pageInfo.current},
+ 			data-page-start=${pageInfo.start},data-page-offset=${pageInfo.offset},data-page-count=${pageInfo.count}"> 
+				<thead>
+					<tr>
+					<td>
+						&emsp;
+					 </td>
+					<td>项目名称</td>
+					<td>项目类型</td>
+					<td>项目对接联系人</td>
+					<td>联系电话</td>
+					<td>项目状态</td>
+					<td class="canOrderTHead viewCount" >项目热度<i class="fa fa-sort-up"> </i></td>
+					<td class="canOrderTHead projectProgress">项目进度 <i class="fa fa-sort-up"> </i></td>
+					<td class="canOrderTHead createTime">创建时间 <i class="fa fa-sort-up"> </i></td>
+					
+					</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${result!=null}" th:each="item:${result}" >
+							<td style="width:3%;">
+								<input  type="checkbox" class="magic-checkbox" name="projectId" th:attr="data-projectId=${item.projectId}" th:id="${item.projectId}"/><label th:attr="for=${item.projectId}">&nbsp;</label>
+							</td>
+							<td style="width:25%;" class="projectNameContent">
+								<div class="projectName"  th:if="${item.projectName!=null}" th:text="${item.projectName}">&nbsp;</div>
+								<div class="operationList">
+									<a href="javascript:void(0)" ><img src="/images/edit.png" class="edit hide"/>
+									</a>
+									
+								</div>
+							</td>
+							<td th:if="${item.projectTypeName!=null}" th:text="${item.projectTypeName}"></td>
+							<td th:if="${item.projectCustomerName!=null}" th:text="${item.projectCustomerName}"></td>
+							<td th:if="${item.projectCustomerPhone!=null}" th:text="${item.projectCustomerPhone}"></td>
+							<td th:if="${item.projectState!=null}" th:text="${item.projectState}"></td>
+							
+							<td th:if="${item.projectViewCount!=null}" th:text="${item.projectViewCount}"></td>
+							<td th:if="${item.projectProgress!=null}" >
+							<div class="progress">
+							    <div class="progress-bar progress-bar-success" th:attr="data-progress=${item.projectProgress}">
+							        <span class="progressText"> </span>
+							    </div>
+								</div>
+							</td>
+							<td th:if="${item.createTime!=null}" th:text="${#dates.format(item.createTime, 'yyyy-MM-dd HH:mm')}"></td>
+						</tr>
+			</tbody>
+					</table>
+
+	 	
+	 </div>
+	  </div>
+	  <script th:src="@{/component/jquery/jQuery-2.2.0.min.js}"></script>
+     <script th:src="@{/component/bootstrap/js/bootstrap.min.js}"></script>
+     <script th:src="@{/component/layer/layer.js}"></script> 
+     <script th:src="@{/js/common.js}"></script>
+     <script th:src="@{/js/project/list.js}"></script>
+</body>
+</html>

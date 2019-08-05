@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjxspace.mapper.system.RoleMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.xjxspace.model.Role">
+		<id column="id" property="id" />
+		<result column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+		<result column="role_desc" property="roleDesc" />
+		<result column="role_code" property="roleCode" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, role_id AS roleId, role_name AS roleName, role_desc AS roleDesc, role_code AS roleCode
+    </sql>
+
+
+  <!-- 获取所有记录-->	
+<select id="getAllRecords" resultMap="BaseResultMap">
+	select
+ 		<include refid="Base_Column_List"/>
+ 		from role
+ 	</select>
+
+	<select id="getRecordsByIds" parameterType="HashMap" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from role
+		where   role_id in
+		<foreach item="roleId" index="index" collection="roleIds" open="(" separator="," close=")">
+			#{roleId}
+		</foreach>
+	</select>
+ 	
+ 	
+
+
+
+</mapper>

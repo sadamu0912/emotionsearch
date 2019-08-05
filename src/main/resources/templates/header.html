@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeteaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body >
+ <!-- HEADER SECTION -->
+        <div id="header" class="main-header" th:fragment="headerfrag">
+			  <a href="/"  class="logo">
+                <span class="logo-mini">LR</span>
+                <span class="logo-lg">山抹微云网络科技</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a class="sidebar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">4</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Profile </strong>
+                                            <span class="pull-right text-muted">40% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                <span class="sr-only">40% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Pending Tasks </strong>
+                                            <span class="pull-right text-muted">20% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                <span class="sr-only">20% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Work Completed </strong>
+                                            <span class="pull-right text-muted">60% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                <span class="sr-only">60% Complete (warning)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>
+                                            <strong> Summary </strong>
+                                            <span class="pull-right text-muted">80% Complete</span>
+                                        </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/images/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                                <span class="hidden-xs">administrator</span>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a class="menuItem" data-id="userInfo" href="5.html"><i class="fa fa-user"></i>个人信息</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-trash-o"></i>清空缓存</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-paint-brush"></i>皮肤设置</a></li>
+                                <li class="divider"></li>
+                                <li><a href="~/Login/OutLogin"><i class="ace-icon fa fa-power-off"></i>安全退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+
+        </div>
+<!-- END HEADER SECTION -->
+
+        </body>
+        </html>

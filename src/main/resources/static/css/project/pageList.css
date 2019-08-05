@@ -1,0 +1,43 @@
+/**
+全局样式
+*/
+*{border:0;margin:0;  padding:0;}
+body{font-family:'微软雅黑',Tahoma; margin:0 auto; font-size:12px}
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style:none;}
+img{border:0;}
+a,a:focus{text-decoration:none;color:#000;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#00a4ac;text-decoration:none;}
+table{border-collapse:collapse;border-spacing: 0;}
+h2{font-size:15px;}
+
+
+
+/**
+列表样式 
+*/
+.main{width:100%;margin:0 auto;overflow-y:auto;}
+.date{width:125px;!importtant}
+
+#queryHead{
+	margin-right:0px;
+	margin-left:0px;
+	background:#fff;
+	height:60px;
+	position:fixed;
+	width:100%;
+}
+.main-content{
+	margin-top:60px;
+}
+.edit{
+	width:35px;
+	height:35px;
+	border-radius:25px;
+	border:1px solid #499d47;
+}
+.projectName{
+	width:100px;
+	height:35px;
+	float:left;
+}

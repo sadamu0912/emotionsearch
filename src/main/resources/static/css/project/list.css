@@ -1,0 +1,43 @@
+/**
+全局样式
+*/
+*{border:0;margin:0;  padding:0;}
+body{background:#fff;font-family:'微软雅黑',Tahoma; margin:0 auto; font-size:12px}
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style:none;}
+img{border:0;}
+dl,dt,dd,span{margin:0;padding:0;display:block;}
+a,a:focus{text-decoration:none;color:#000;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#00a4ac;text-decoration:none;}
+table{border-collapse:collapse;border-spacing: 0;}
+h2{font-size:15px;}
+
+
+
+/**
+列表样式 
+*/
+.main{width:100%;margin:0 auto;overflow:hidden;}
+.titlefont{font-size:14px;font-weight:bold;color:#03a8b1;padding-left:17px;padding-top:17px;float:left;}
+.titlefont a{font-size:14px;font-weight:bold;color:#03a8b1;}
+.titlefont a:hover{color:#eb7b0e;}
+.more{float:right;padding-right:20px;padding-top:19px;}
+.more a,.morelist a{color:#03a8b1;}
+.more a:hover,.morelist a:hover{color:#eb7b0e;}
+.box{width:100%;float:left;_float:none;margin-top:28px;background:#fff;border: solid 1px #dededf;}
+.list{clear:both;padding-top:11px;padding-left:5px;_padding-left:7px;}
+.list li{float:left;width:18%;margin-right:8px;margin-left:8px;_margin-right:4px;_margin-left:4px;padding-bottom:20px;}
+.list li h2{font-weight:normal;padding-left:7px; display:block; float:left;width:200px;margin-top:8px;*line-height:16px; height:15px; overflow:hidden}
+.listpic{width:200px;height:200px;}
+.listpic img{width:180px;height:200px;margin-left:10px;margin-right:10px;}
+.hoverd{opacity: 0.6;}
+.listcount{width:180px;margin-left:10px;margin-right:10px;margin-top:8px;float:left;}
+/**
+图片下面的查看，喜欢 
+*/
+.view,.view1{float:left;height:16px;background:url(/images/project/view.gif) 0 2px no-repeat;margin-left:6px;_margin-left:3px;padding-left:19px;}
+.view,.comment,.love,.comment1{font-size:11px;font-family:Arial;color:#b7b7b7;}
+.view1{font-size:12px;font-family:Arial;color:#b7b7b7;}
+.comment{float:left;background:url(/images/project/comment.gif) 0 2px no-repeat;margin-left:14px;padding-left:16px;}
+.comment1{float:left;background:url(/images/project/love.gif) 0 2px no-repeat;margin-left:14px;padding-left:16px;}
+.love{float:right;height:16px;margin-right:5px;background:url(/images/project/love.gif) 0 2px no-repeat;padding-left:16px;}
